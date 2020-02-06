@@ -102,6 +102,24 @@ console.log(pozdrav.length);
  console.log(str4n);
 */
 
+fs.readFile('lorem.txt', 'utf8', (err, data) => {
+    if (err){
+        console.log('could not read');
+        return;
+    }
+    let str5 = data.split(' ');
+    
+        str5.forEach(element => {
+            
+         if(element.length > 7)
+            
+            return;
+            
+        
+        });
+    
+ });
+
 
 
 // Broj na zborovi
@@ -131,6 +149,9 @@ fs.readFile('lorem.txt', 'utf8', (err, data) => {
     let data3 = data.split('.');
     console.log(data3.length);
 });
+
+
+//Longest word
 
 // if is outside it hasnt wait for reading
 /*fs.appendFile('data.txt', 'test test test', (err) => {
