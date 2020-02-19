@@ -1,6 +1,6 @@
 const db = require('./bootstrap/db');
- const produkt = require ('./models/produkt');
-
+ const produkt = require('./models/produkt');
+ const worker = require('./models/worker');
  
 db.initDB();
 
@@ -10,6 +10,18 @@ produkt.createNew({
     "cena" : 50.0,
     "tezina" : 300.0,
     "parcinja" : 1
+});
+
+worker.createNew({
+    "first_name": "Semir",
+    "last_name" : "Arifi",
+    "address" : "Probishtipska 17",
+    "age" : 22,
+    "position" : "Owner"
+})
+
+.then(() => {
+    return worker.update ("5e4c42dc563fab95e517625a", {age: 45});
 })
 
 .then(() => {
@@ -24,6 +36,10 @@ produkt.createNew({
     return produkt.readAll()
 })
 
+.then (() => {
+    return worker.readAll()
+})
+
 .then(data => {
     console.log(data);
 })
@@ -31,6 +47,7 @@ produkt.createNew({
 .catch(err => {
     console.log(err);
 })
+
 
 /*const mongoose = require('mongoose');
 const cstring = 'mongodb+srv://semir17:asdfghjklS1!@cluster0-qdlav.mongodb.net/prodavnica?retryWrites=true&w=majority';
@@ -91,7 +108,7 @@ Produkt.find({}, (err,data) =>{
 //Produkt.remove({_id: "5e42b2867398be20882d467a"}, (err) => {
    // if(err){
      //   console.log('Could not delete from database');
-        return;
+       // return;
    // }
 //});
 
