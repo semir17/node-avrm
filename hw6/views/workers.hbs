@@ -37,6 +37,18 @@
 
 
     <button type="submit">ADD NEW</button>
+
+       {{#each workers}}
+    <tr>
+       
+        <td>{{this.first_name}}</td>
+        <td>{{this.last_name}}</td>
+        <td>{{this.address}}</td>
+        <td>{{this.age}}</td>
+        <td>{{this.position}}</td>
+    
+    </tr>
+    {{/each}}
 </form>
       </div>
     </div>

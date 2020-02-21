@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>Dashboard</h2>
+        <a href="/">Log out</a>
+    </header>
+    <div class="main-container2">
+        <div class="form2">
+       <table border="1" width="80%" align="center">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            
+        </tr>
+            {{#each users}}
+        <form action="/" method="POST">
+            <tr id="uid_{{this._id}}"></tr>
+                <td>{{this.first_name}}</td>
+                <td>{{this.last_name}}</td>
+                <td>{{this.email}}</td>
+                
+               
+        </form>
+        </tr>
+        {{/each}}
+    </table>
+    </div>
+    </div>
+    
+</body>
+</html>

@@ -59,8 +59,8 @@ const User = mongoose.model(
         });
     };
 
-    const getByEmail =() => {
-        return new Promise ((succes, fail) => {
+    const getByEmail =(email) => {
+        return new Promise ((success, fail) => {
             User.findOne({email: email}, (err, data) => {
                 if(err){
                     return fail(err);
@@ -69,6 +69,8 @@ const User = mongoose.model(
             });
         });
     }
+
+    
 
     module.exports= {
     readAll,
