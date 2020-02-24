@@ -1,16 +1,15 @@
 const db = require('../bootstrap/db');
-const users = require('../models/user');
+const user = require('../models/user');
 
 const viewDashboard = (req, res) => {
-    
-        users.readAll()
-            .then((data) => {
-                let out = {
-                    users: data
-                };
-                res.render('dashboard', out);
-            
-    });
+    user.readAll()
+        .then(data => {
+            res.render('dashboard', {users: data});
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).send('internal server error');
+        });
 }
 
 module.exports = {

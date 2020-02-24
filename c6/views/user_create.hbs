@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <title>Create</title>
+</head>
+<body>
+    <div>
+        <h1>Create User</h1>
+    </div>
+    <div class="main-container">
+        <div class="form">
+<form method="post" action="/users/new">
+    <label>
+        <span>FIRST NAME</span>
+        <input type="text" name="first_name"/>
+    </label>
+    <label>
+        <span>LAST NAME</span>
+        <input type="text" name="last_name"/>
+    </label>
+    <label>
+        <span>E-MAIL</span>
+        <input type="text" name="email"/>
+    </label>
+    <label>
+        <span>PASSWORD</span>
+        <input type="password" name="password" required />
+    </label>
+    <label>
+        <span>RE-TYPE PASSWORD</span>
+        <input type="password" name="password2" required />
+    </label>
+    <button type="submit">CREATE</button>
+    
+</form>
+
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Edit</title>
+</head>
+
+<body>
+    
+    <div class="main-container">
+        <div class="form">
+
+  
+            <form method="post" action="/users/edit/{{user_id}}">
+                <input type="hidden" name="id" value="{{user_id}}" />
+                
+                <label>
+                    <span>FIRST NAME</span>
+                    <input type="text" name="first_name" value="{{users.first_name}}" />
+                </label>
+                <label>
+                    <span>LAST NAME</span>
+                    <input type="text" name="last_name" value="{{users.last_name}}"/>
+                </label>
+                <label>
+                    <span>EMAIL</span>
+                    <input type="email" name="email" value="{{users.email}}"/>
+                </label>
+                
+                <button type="submit">EDIT</button>
+                
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

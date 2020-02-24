@@ -56,6 +56,12 @@ app.post('/register', auth.apiRegister);
 
 app.get('/dashboard', dashboard.viewDashboard);
 
+app.get('/users/new', users.viewNewUser)
+app.post('/users/new', users.apiNewUser)
+app.get('/users/edit/:id', users.viewEditUser)
+app.post('/users/edit/:id', users.apiEditUser)
+app.get('/users/delete/:id', users.apiDeleteUser)
+
 
 
 app.listen(8080, (err) => {

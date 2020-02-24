@@ -24,6 +24,17 @@ const User = mongoose.model(
         });
     };
 
+    const readOne = (id) =>{
+        return new Promise ((success, fail) => {
+            User.findById( id, 'email', (err,data)=>{
+                if(err){
+                    return fail(err)
+                }
+                return success(data)
+            });
+        });
+    };
+
     const createNew = (data) => {
         return new Promise ((success, fail) => {
             let p = new User(data);
@@ -73,7 +84,9 @@ const User = mongoose.model(
     
 
     module.exports= {
+        
     readAll,
+    readOne,
     createNew,
     remove,
     update,
